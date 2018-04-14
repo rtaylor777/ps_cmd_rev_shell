@@ -81,7 +81,8 @@ I always wondered why the reverse shell established with netcat echoed the comma
 
 **Set Commands Do Not Persist:** With this "Combined PowerShell and CMD Reverse Shell", 'set commands' do not persist. This is because only the PowerShell shell persists between commands that you execute. The solution is to switch to the PowerShell version of the shell and set the environment variable using PowerShell commands:<br />
 
-!(https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/set_environment..jpg)
+![set environment example](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/set_environment..jpg)
+
 
 **STDERR (Standard Error)** output from the CMD prompt looks a bit odd. Because the CMD commands are being run from PowerShell you will see PowerShell tries to mark up the resulting error messages. The result looks rather messy. You should still be able to make out the original output of the CMD error message.
 
