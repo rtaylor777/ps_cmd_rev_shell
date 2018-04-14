@@ -94,4 +94,5 @@ I always wondered why the reverse shell established with netcat echoed the comma
 
 **STDERR (Standard Error)** output from the CMD prompt looks a bit odd. Because the CMD commands are being run from PowerShell you will see PowerShell tries to mark up the resulting error messages. The result looks rather messy. You should still be able to make out the original output of the CMD error message.
 
+![example of an error message](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/error_messages.jpg)
 
