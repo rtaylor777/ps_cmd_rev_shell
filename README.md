@@ -1,15 +1,14 @@
 # Combined PowerShell and CMD Reverse Shell
 
-**Credit:** Based on the PowerShell reverse shell one-liner provided by Nikhil Mittal:
-
+**Credit:** Based on the PowerShell reverse shell one-liner provided by Nikhil Mittal:<br />
 https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1
 
 **Disclaimer:** These scripts are provided for educational purposes only and for use by Ethical Hackers. Use only on systems for which you have acquired all the legally required contracts and permissions for use. It is your responsibility to determine whether you are legally permitted to use these scripts in your country and for your purposes. No warrantee or guarantees are provided.
 
 **Tested on** PowerShell version 2 and up.
 
-**Intro:**
-This is a psudo cmd.exe reverse shell. I designed this shell to support some PowerShell convenience commands such as 'cd','exit','d:','pwd','ls','ps','rm','cp','mv','cat'.
+**Intro:**<br />
+This is a psudo cmd.exe reverse shell. I designed this shell to support some PowerShell convenience commands such as 'pwd','ls','ps','rm','cp','mv','cat'.
 
 Simply add more of them to the array if you wish to support more. Also, if you are determined to only support CMD commands when at the CMD prompt then reduce the list. Bear in mind that 'cd,'exit',and 'd:' are required, if you remove them you will be unable to make persistent changes to other drives or directories and you will not be able to use the exit command to exit the shell.
 
