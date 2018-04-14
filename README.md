@@ -70,6 +70,7 @@ You need to be able to save a file and execute it in order to use the Launcher. 
 If you can download and run the VBScript Launcher file it is far superior in the following ways: You can run the script multiple times and it will continue making reverse shell connections to the msfconsole multi/handler. You can close the original command window that you ran the Launcher script in and the reverse shells continue running. You can even run the Launcher script from within an existing reverse shell connection and it will launch another reverse shell connection to the multi/handler.
 
 **Basic Usage**
+
 After catching a reverse shell in the multi/handler you can switch to it as usual. You will need to hit the Enter key at least once after switching to the new session before you will see a prompt.
 
 Use the CTRL-Z key combination to background a session as usual.
