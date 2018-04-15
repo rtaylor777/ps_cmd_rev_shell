@@ -69,7 +69,7 @@ For convenience there is also the psnoenv.vbs script. You will have to edit the 
 
 ## More Discussion
 
-**Pasted Script VS VBScript Launcher Saved File**
+**Pasted Script VS. VBScript Launcher Saved File**
 
 You need to be able to save a file and execute it in order to use the Launcher. Some AV engines only look at files and not what is pasted into an existing command window. Sometimes you are able to execute commands but you are not able to see the output. Then it can be hard to know if your downloads are succeeding or where they are ending up. In this case you could try pasting in and running the script as a command.
 
