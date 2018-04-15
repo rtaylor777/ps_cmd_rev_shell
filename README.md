@@ -70,6 +70,7 @@ For convenience there is also the psnoenv.vbs script. You will have to edit the 
 You need to be able to save a file and execute it in order to use the Launcher. Some AV engines only look at files and not what is pasted into an existing command window. Sometimes you are able to execute commands but you are not able to see the output. Then it can be hard to know if your downloads are succeeding or where they are ending up. In this case you could try pasting in and running the script as a command.
 
 If you can download and run the VBScript Launcher file it is far superior in the following ways: You can run the script multiple times and it will continue making reverse shell connections to the msfconsole multi/handler. You can close the original command window that you ran the Launcher script in and the reverse shells continue running. You can even run the Launcher script from within an existing reverse shell connection and it will launch another reverse shell connection to the multi/handler.
+![launching another reverse shell](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/launching_new_revshell.jpg)
 
 **Basic Usage**
 
