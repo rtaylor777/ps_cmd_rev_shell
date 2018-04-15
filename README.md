@@ -8,8 +8,8 @@ https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOn
 **Tested on** PowerShell version 2 and up.
 
 ## Downloading
-wget -O psrev.vbs https://raw.githubusercontent.com/rtaylor777/ps_cmd_rev_shell/master/psrev.vbs
-wget -O psnoenv.vbs https://raw.githubusercontent.com/rtaylor777/ps_cmd_rev_shell/master/psnoenv.vbs
+wget -O psrev.vbs https://raw.githubusercontent.com/rtaylor777/ps_cmd_rev_shell/master/psrev.vbs<br />
+wget -O psnoenv.vbs https://raw.githubusercontent.com/rtaylor777/ps_cmd_rev_shell/master/psnoenv.vbs<br />
 
 ## CMD Shell Intro
 This is a pseudo cmd.exe reverse shell. I designed this shell to support some PowerShell convenience commands such as 'pwd','ls','ps','rm','cp','mv','cat'.
