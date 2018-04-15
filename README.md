@@ -14,7 +14,7 @@ wget -O psnoenv.vbs https://raw.githubusercontent.com/rtaylor777/ps_cmd_rev_shel
 ## CMD Shell Intro
 This is a pseudo cmd.exe reverse shell. I designed this shell to support some PowerShell convenience commands such as 'pwd','ls','ps','rm','cp','mv','cat'.
 
-Simply add more of them to the array if you wish to support more. Also, if you are determined to only support CMD commands when at the CMD prompt then reduce the list. Bear in mind that 'cd,'exit',and 'd:' are required, if you remove them you will be unable to make persistent changes to other drives or directories and you will not be able to use the exit command to exit the shell.
+Simply add more of them to the array if you wish to support more. Also, if you are determined to only support CMD commands when at the CMD prompt then reduce the list. Bear in mind that 'cd,'exit',and 'd:' are required, if you remove them you will be unable to switch to other directories or drives and have the switch persist until the next command, and you will not be able to use the exit command to exit the shell.
 
 The reality is that PowerShell is calling 'cmd.exe /c' for every CMD command that you enter, so in effect PowerShell is the parent, cmd.exe the child and the only environment change that persists between commands happens in PowerShell. For this reason I had to catch any directory or drive letter change and execute them in PowerShell, otherwise the change would not persist between one call to cmd.exe and the next.
 
