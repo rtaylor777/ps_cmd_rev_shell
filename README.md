@@ -104,6 +104,11 @@ The HOSTIP and EXP1 environment variables are already set in the reverse shell c
 
 I always wondered why the reverse shell established with netcat echoed the command that was entered back as well as the output. I discovered the answer while trying to figure out why when a session was backgrounded in the multi/handler and then when I later returned to it none of the entered text was visible, and the output text was jumbled up with some of it on the input prompt line itself. As soon as I echoed back the input command text as well as the output with my PowerShell/CMD reverse shell, returning to a backgrounded session resulted in a session display that made sense.
 
+**What Payload Should The Multi/Handler Be Set To**
+
+You will notice that I used the windows/x64/shell_reverse_tcp payload for the multi/handler. You could also use windows/shell_reverse_tcp. It really doesn't matter so long as it is not trying to handle a staged payload. You can even connect to a multi/handler set for either of these payloads from a netcat connection from Windows or Linux.
+
+
 ## Troubleshooting
 
 **The most common issue** that you are going to run into is that while you are trying to get another reverse shell (or the first one) using the "Combined PowerShell and CMD Reverse Shell", you are trying to run the PowerShell or VBScript script in a CMD shell (or reverse shell) that does not have the environment variables HOSTIP and EXP1 set. This can happen when you open another CMD prompt or establish a reverse shell using some other exploit or method. Simply set the required environment variables before trying to run the scripts.
