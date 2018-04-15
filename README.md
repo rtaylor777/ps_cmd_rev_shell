@@ -107,7 +107,9 @@ I always wondered why the reverse shell established with netcat echoed the comma
 **What Payload Should The Multi/Handler Be Set To**
 
 You will notice that I used the windows/x64/shell_reverse_tcp payload for the multi/handler. You could also use windows/shell_reverse_tcp. It really doesn't matter so long as it is not trying to handle a staged payload. You can even connect to a multi/handler set for either of these payloads from a netcat connection from Windows or Linux.
-
+![connect](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/connect_from_ubuntu.jpg)
+![caught](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/caught_connection.jpg)
+![ubuntu](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/netcat_revshell_caught.jpg)
 
 ## Troubleshooting
 
