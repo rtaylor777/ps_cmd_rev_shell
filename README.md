@@ -135,6 +135,6 @@ You will notice that I used the windows/x64/shell_reverse_tcp payload for the mu
 
 It is still possible to run an interactive program from the shell and end up with it seeming to be hung. Your only choice in this case is to use CTRL-C and kill the shell. This is why I developed the VBScript Launcher process to permit launching multiple reverse shells which are caught with the multi/handler. You should always keep at least one extra reverse shell around unless you feel like compromising the target all over again (which may be required in some cases if you do not already have another reverse shell waiting).
 
-**Q.** Why is it so difficult to get a truly interactive shell on Windows? **A.** Many of the terminal programs on Windows, such as those that require you to enter a password (and PowerShell itself), use other methods for input and output than the standard input (STDIN), standard output (STDOUT) and standard error (STDERR).
+**Q.** Why is it so difficult to get a truly interactive remote shell on Windows? **A.** Many of the terminal programs on Windows, such as those that require you to enter a password (and PowerShell itself), use other methods for input and output than the standard input (STDIN), standard output (STDOUT) and standard error (STDERR).
 
 
