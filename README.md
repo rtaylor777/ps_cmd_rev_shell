@@ -137,4 +137,6 @@ It is still possible to run an interactive program from the shell and end up wit
 
 **Q.** Why is it so difficult to get a truly interactive remote shell on Windows? **A.** Many of the terminal programs on Windows, such as those that require you to enter a password (and PowerShell itself), use other methods for input and output instead of or in addition to the use of the standard input (STDIN), standard output (STDOUT) and standard error (STDERR) streams.
 
+**Example Usage**
+http://a41l4.blogspot.ca/2018/05/pth-wmis-and-combined-powershell-and.html
 
