@@ -147,10 +147,10 @@ This was an effort to set up a port forward with plink so that the reverse shell
 Additionally, this time it shows nothing in the Network Operations section of the cloud console. 
 
 To use PlinkPowerLine.vbs you will will need to edit the script and put in your attacking IP address as well as the -hostkey value. You can get the -hostkey value by running the plink command in -batch mode but without specifying the -hostkey. It will 
-error out and display the attackers hostkey value. In my case it was the colon separated hexadecimal text following the neame ssh-ed25518. You can do this on a Windows host that you control because unless you regenerate your ssh host keys your host key should remain the same.
+error out and display the attackers hostkey value. In my case it was the colon separated hexadecimal text following the neame ssh-ed25518. You can do this on a Windows host that you control because unless you regenerate your ssh host keys your host key should remain the same. For the plink command you will also need to replace 'test' with a username from your attacking machine and that user's password.
 
 
-## Troubleshooting
+## General Troubleshooting
 
 **The most common issue** that you are going to run into is that while you are trying to get another reverse shell (or the first one) using the "Combined PowerShell and CMD Reverse Shell", you are trying to run the PowerShell or VBScript script in a CMD shell (or reverse shell) that does not have the environment variables HOSTIP and EXP1 set. This can happen when you open another CMD prompt or establish a reverse shell using some other exploit or method. Simply set the required environment variables before trying to run the scripts.
 
