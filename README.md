@@ -116,6 +116,10 @@ You will notice that I used the windows/x64/shell_reverse_tcp payload for the mu
 ![caught](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/caught_connection.jpg)
 ![ubuntu](https://github.com/rtaylor777/ps_cmd_rev_shell/blob/master/netcat_revshell_caught.jpg)
 
+## revshell.ps1
+While testing on EDR (Endpoint Detection and Response) solutions, I decided to configure the script to accept the hostip and port as parameters as well as to start in the PowerShell mode. The activity of launching CMD windows to run commands from within PowerShell was suspicious. In the 3 EDR solutions that I tested, the script was detected when run by PowerShell.exe. But when run by a tool called PowerLine (https://github.com/fullmetalcache/PowerLine) it was only detected on CrowdStrike (https://www.crowdstrike.com/).
+
+
 ## Troubleshooting
 
 **The most common issue** that you are going to run into is that while you are trying to get another reverse shell (or the first one) using the "Combined PowerShell and CMD Reverse Shell", you are trying to run the PowerShell or VBScript script in a CMD shell (or reverse shell) that does not have the environment variables HOSTIP and EXP1 set. This can happen when you open another CMD prompt or establish a reverse shell using some other exploit or method. Simply set the required environment variables before trying to run the scripts.
